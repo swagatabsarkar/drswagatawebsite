@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-slate-50">
+      <main className="min-h-screen bg-slate-50 pt-20">
         <Hero />
         <Stats />
         <About />

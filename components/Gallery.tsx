@@ -1,38 +1,70 @@
+import Image from "next/image";
+import FadeIn from "./FadeIn";
 import { gallery } from "../data/gallery";
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-20 bg-slate-100">
-      <div className="max-w-7xl mx-auto px-8">
+    <FadeIn>
+      <section id="gallery" className="bg-slate-50 py-20">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
-        <h2 className="text-4xl font-bold text-center text-blue-700 mb-12">
-          Photo Gallery
-        </h2>
+          {/* Section Heading */}
+          <div className="text-center mb-16">
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <p className="text-blue-700 font-semibold uppercase tracking-widest">
+              Gallery
+            </p>
 
-          {gallery.map((photo) => (
-            <div
-              key={photo.id}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300"
-            >
-              <img
-                src={photo.image}
-                alt={photo.title}
-                className="w-full h-64 object-cover hover:scale-105 transition duration-500"
-              />
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-3">
+              Photo Gallery
+            </h2>
 
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-center">
-                  {photo.title}
-                </h3>
+            <p className="mt-5 text-lg text-gray-600 max-w-3xl mx-auto">
+              Highlights from conferences, keynote talks, workshops,
+              research activities, student mentoring, awards,
+              collaborations, and academic events.
+            </p>
+
+          </div>
+
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {gallery.map((photo) => (
+              <div
+                key={photo.id}
+                className="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+              >
+
+                {/* Image */}
+                <div className="overflow-hidden">
+
+                  <Image
+                    src={photo.image}
+                    alt={photo.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+
+                </div>
+
+                {/* Caption */}
+                <div className="p-6">
+
+                  <h3 className="text-xl font-semibold text-slate-800 text-center group-hover:text-blue-700 transition">
+                    {photo.title}
+                  </h3>
+
+                </div>
+
               </div>
-            </div>
-          ))}
+            ))}
+
+          </div>
 
         </div>
-
-      </div>
-    </section>
+      </section>
+    </FadeIn>
   );
 }

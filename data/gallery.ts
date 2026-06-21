@@ -25,7 +25,7 @@ export const gallery = [
     image: "/images/gallery/InnovaTN 2025.jpg",
   },
   {
-    id: 5,
+    id: 6,
     title: "EDII TN Director Tamilnadu",
     image: "/images/gallery/Meet Director EDII-TN.jpg",
   },

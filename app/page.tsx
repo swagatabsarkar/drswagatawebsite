@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Stats from "../components/Stats";
@@ -14,9 +15,14 @@ import Awards from "../components/Awards";
 import Achievements from "../components/Achievements";
 import Gallery from "../components/Gallery";
 import Contact from "../components/Contact";
+import BackToTop from "../components/BackToTop";
+import StructuredData from "../components/StructuredData";
+
 export default function Home() {
   return (
     <>
+      <StructuredData />
+
       <Navbar />
 
       <main className="min-h-screen bg-slate-50 pt-20">
@@ -36,6 +42,9 @@ export default function Home() {
         <Gallery />
         <Contact />
       </main>
+
+      <Footer />
+      <BackToTop />
     </>
   );
 }

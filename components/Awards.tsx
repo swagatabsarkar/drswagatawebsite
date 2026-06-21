@@ -1,46 +1,79 @@
+import FadeIn from "./FadeIn";
 import { awards } from "../data/awards";
 
 export default function Awards() {
   return (
-    <section id="awards" className="py-20 bg-slate-100">
-      <div className="max-w-7xl mx-auto px-8">
+    <FadeIn>
+      <section id="awards" className="bg-slate-100 py-20">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
-        <h2 className="text-4xl font-bold text-center text-blue-700 mb-12">
-          Awards & Honors
-        </h2>
+          {/* Section Heading */}
+          <div className="text-center mb-16">
 
-        <div className="grid md:grid-cols-2 gap-8">
+            <p className="text-blue-700 font-semibold uppercase tracking-widest">
+              Recognition & Excellence
+            </p>
 
-          {awards.map((award) => (
-            <div
-              key={award.id}
-              className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300"
-            >
-              <h3 className="text-2xl font-semibold text-slate-800">
-                {award.title}
-              </h3>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-3">
+              Awards & Honors
+            </h2>
 
-              <p className="mt-3 text-gray-700">
-                <strong>Organization:</strong> {award.organization}
-              </p>
+            <p className="mt-5 text-lg text-gray-600 max-w-3xl mx-auto">
+              Recognition received for excellence in teaching, research,
+              innovation, leadership, mentoring, and professional service
+              throughout my academic career.
+            </p>
 
-              <div className="flex justify-between items-center mt-6">
+          </div>
 
-                <span className="bg-blue-700 text-white px-4 py-2 rounded-full text-sm">
-                  {award.category}
-                </span>
+          {/* Award Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-                <span className="text-lg font-semibold text-gray-700">
-                  {award.year}
-                </span>
+            {awards.map((award) => (
+              <div
+                key={award.id}
+                className="group bg-white rounded-2xl border border-slate-200 shadow-lg p-8 hover:border-blue-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col"
+              >
+
+                {/* Trophy Icon */}
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-yellow-100 to-amber-200 flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition">
+                  🏆
+                </div>
+
+                {/* Award Title */}
+                <h3 className="text-2xl font-bold text-slate-800 group-hover:text-blue-700 transition">
+                  {award.title}
+                </h3>
+
+                {/* Organization */}
+                <p className="mt-5 text-gray-600 flex items-center gap-2">
+                  <span className="text-lg">🏛️</span>
+                  <span>{award.organization}</span>
+                </p>
+
+                {/* Spacer */}
+                <div className="flex-grow"></div>
+
+                {/* Bottom Badges */}
+                <div className="mt-8 flex flex-wrap justify-between items-center gap-3">
+
+                  <span className="bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium">
+                    {award.category}
+                  </span>
+
+                  <span className="bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-semibold">
+                    {award.year}
+                  </span>
+
+                </div>
 
               </div>
-            </div>
-          ))}
+            ))}
+
+          </div>
 
         </div>
-
-      </div>
-    </section>
+      </section>
+    </FadeIn>
   );
 }

@@ -31,7 +31,7 @@ export default function Hero() {
         {/* Right Side */}
         <div className="flex justify-center">
           <img
-            src="/images/profile.jpg"
+            src="/images/profile.jpeg"
             alt="Dr. Swagata Sarkar"
             className="w-96 rounded-3xl shadow-2xl"
           />
